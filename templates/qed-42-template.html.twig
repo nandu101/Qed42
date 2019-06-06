@@ -1,0 +1,16 @@
+{# 
+/** 
+ * @file
+ * Rendered data for qed42 block content.
+ * @see QedBlock::build().
+#}
+
+<ul class='clearfix menu'> 
+    {% for data in qed42_data %}
+        <li class="menu-item">
+            <a href="{{ data.nid }}">{{ data.title }}</a> 
+        </li>
+    {% endfor %}
+</ul>
+
+

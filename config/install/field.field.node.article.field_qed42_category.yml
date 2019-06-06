@@ -1,0 +1,29 @@
+uuid: 4e232658-6697-445c-8b69-5c9a78b764c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_qed42_category
+    - node.type.article
+    - taxonomy.vocabulary.qed42_category
+id: node.article.field_qed42_category
+field_name: field_qed42_category
+entity_type: node
+bundle: article
+label: 'Qed42 Category'
+description: 'Enter For example: Category1, Category2 etc.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      qed42_category: qed42_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,46 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+use Drupal\node\Entity\Node;
+/**
+* Implementation of hook_install().
+*/
+function qed_42_install() {
+	//Use schema API to create database table.
+	$categories_vocabulary = 'qed42_category'; // Machine name
+	$categories = ['Category1', 'Category2', 'Category3', 'Category4']; // List of qed42 Cat. terms
+		foreach ($categories as $category) {
+		$term = Term::create(array(
+		'parent' => array(),
+		'name' => $category,
+		'vid' => $categories_vocabulary,
+		))->save();
+	}
+
+// Node created
+$titles = ['content1', 'content2', 'content3', 'content4', 'content5','content6'];	
+foreach ($titles as $title) {	
+$node = Node::create(['type' => 'article']);
+$node->set('title', $title);
+$body = [
+'value' => 'qed42 block content',
+'format' => 'basic_html',
+];
+$node->set('body', $body);
+$node->set('uid', 1);
+$node->set('field_qed42_category', 1);
+$node->status = 1;
+$node->enforceIsNew();
+$node->save();
+}
+}
+/**
+* Implementation of hook_theme().
+*/
+function qed_42_theme($existing, $type, $theme, $path) {
+  return [
+    'qed-42-template' => [
+        'variables' => ['qed42_data' => NULL],
+    ],
+  ];
+}

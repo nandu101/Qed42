@@ -1,0 +1,10 @@
+name: QED42
+description: A custom module to display the block same node category by same author.
+package: Custom
+type: module
+version: 1.0
+core: 8.x
+dependencies:
+  - block
+  - node
+  

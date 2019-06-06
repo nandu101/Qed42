@@ -1,0 +1,9 @@
+uuid: 4e232658-6697-445c-8b69-5c9a78b764c7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Qed42 Category'
+vid: qed42_category
+description: 'Type of Category'
+hierarchy: 0
+weight: 0
