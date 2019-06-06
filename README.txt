@@ -35,6 +35,7 @@ INSTALLATION
 
  * Install as you would normally install a contributed Drupal module.
    See: https://www.drupal.org/node/895232 for further information.
+   Download module and compress/extract then rename (Qed42-master to Qed42).
 
 
 CONFIGURATION
